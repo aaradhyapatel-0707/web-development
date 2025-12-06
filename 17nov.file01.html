@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validateform(){
+            let name = document.getElementById("name").value;
+            let mobile = document.getElementById("mobile").value;
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirmPassword").value;
+
+            if(name=="" || mobile=="" || password=="" || confirmPassword==""){
+                alert("all fields are required");
+                return false;
+            }
+            else if(mobile.length!=10){
+                alert("mobile number should be 10 digits");
+                return false;
+            }
+            else if(password!=confirmPassword){
+                alert("password do not match");
+                return false;
+            }
+            else{
+                alert("form should be submitted successfully");
+                return true;
+            }
+            
+        }
+        
+    </script>
+</head>
+<body>
+    <h2>Student Registrartion Form</h2>
+    <form onsubmit="return validateform()">    <!--return will give true or false -->
+        Name<br>
+        <input type="text" id="name"><br><br>
+        Mobile Number:<br>
+        <input type="text" id="mobile"><br><br>
+        Password:<br>
+        <input type="text" id="password"><br><br>
+        Confirm Password:<br>
+        <input type="text" id="confirmPassword"><br><br>
+        <button>Sumbit</button>
+    </form>
+</body>
+</html>
